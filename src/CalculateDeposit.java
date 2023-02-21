@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class CalculateDeposit {
-    double calculateComplexPercent(double a, double y, int d) {
+public class CalculateDeposit { // Класс лучше назвать DepositCalculator. Сейчас имя класса начинается с глагола, как метод
+    double calculateComplexPercent(double a, double y, int d) { // имена переменных не информативны, можно сделать как в методе calculateSimplePercent
         double pay = a * Math.pow((1 + y / 12), 12 * d);
         return round(pay, 2);
     }
@@ -15,12 +15,12 @@ public class CalculateDeposit {
         return Math.round(value * scale) / scale;
     }
 
-    void doImportantJob() {
+    void doImportantJob() { // Имя метода не информативное, непонятно по названию что делает этот метод
         int period;
-        int action;
+        int action; // блок объявления переменных вроде тоже желательно отделять пустой строкой, как и методы
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сумму вклада в рублях:");
-        int amount = scanner.nextInt();
+        int amount = scanner.nextInt(); // Здесь лучше оставить инициализацию переменной, а объявить ее в блоке объявления переменных выше
         System.out.println("Введите срок вклада в годах:");
         period = scanner.nextInt();
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
@@ -35,6 +35,6 @@ public class CalculateDeposit {
     }
 
     public static void main(String[] args) {
-        new CalculateDeposit().doImportantJob();
+        new CalculateDeposit().doImportantJob(); // Эта строка изменится при переименовании имени класса и метода
     }
 }
